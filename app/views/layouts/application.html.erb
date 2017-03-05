@@ -15,16 +15,30 @@
 		    <div id="logo"><%= link_to "Fany", videos_path %>
 		    	<div class="logo_under">笑う動画SNS</div>
 		    </div>
-		    <ul class="header-right">
-		      <li><%= link_to "動画一覧", videos_path %></li>
-		      <li><%= link_to "投稿する", new_video_path %></li>
-		      <li><a href="#">About</a></li>
-		      <div class="fb-like fb" data-href="<%= "http://#{request.host+request.fullpath}" %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-		    </ul>
-		    
+		    <% if user_signed_in? %>
+		    <!-- ログイン時ヘッダーの表示 -->
+			    <ul class="header-right">
+			      <li><%= link_to "動画一覧", videos_path %></li>
+			      <li><%= link_to "投稿する", new_video_path %></li>
+			      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+			      <div class="fb-like fb" data-href="<%= "http://#{request.host+request.fullpath}" %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+			    </ul>
+			  <% else %>
+			  	<ul class="header-right"> 
+			  	<!-- ログインしてない時ヘッダーの表示 -->
+			      <li><%= link_to "動画一覧", videos_path %></li>
+			      <li><%= link_to "投稿する", new_video_path %></li>
+			      <li><%= link_to "ログイン", new_user_session_path %></li>
+			      <div class="fb-like fb" data-href="<%= "http://#{request.host+request.fullpath}" %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+			    </ul>
+			  <% end %>
 		  </div>
 		</header>
 		<div class="container">
+			<div class="container">
+				<p><%= notice %></p> <!-- ログイン成功メッセージ -->
+			</div>
+			<p><%= alert %></p> <!-- ログインしてくださいメッセージ -->
    		<%= yield %>
 		</div>
 		<footer>
@@ -42,11 +56,12 @@
 		</footer>
 		<div id="fb-root"></div>
 <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
   </body>
 </html>

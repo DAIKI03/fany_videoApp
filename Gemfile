@@ -39,6 +39,9 @@ gem 'kaminari'#ページネーション
 gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'bootstrap-sass'
 gem 'rails-i18n'#バリデーションを日本語化
+gem 'devise'#ログイン機能
+gem 'devise-i18n'#deviseを日本語化
+gem 'devise-i18n-views'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

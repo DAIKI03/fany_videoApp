@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!, only: :new # ユーザがログインしていないと"new"にアクセスできない
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
   # GET /videos
