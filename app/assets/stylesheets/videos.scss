@@ -1,0 +1,332 @@
+// Place all the styles related to the videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* 共通レイアウト ================================ */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	min-height: 100%;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+	width: 100%;
+  padding-top: 80px;
+  color: #364a4d;
+  overflow-x: hidden;
+  background-color: #F4F4F2;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1f89e2;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #1b7ccd;
+}
+
+.container {
+  max-width: 84%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+/* フォント ================================ */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 40px;
+  letter-spacing: normal;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 1px;
+}
+
+/* ヘッダー ================================ */
+.navbar {
+  height: 80px;
+  background-color: #FFD464;
+  opacity: 0.888;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+#logo {
+  float: left;
+  font-size: 40px;
+  color: #fff;
+  padding-top: 12px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.logo_under {
+  font-size: 14px;
+  color: #00a1e9;
+  font-weight: normal;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-left: 8px;
+}
+
+.header-right {
+  float: right;
+  margin: 0 auto;
+}
+
+.header-right a {
+  color: #222;
+  display: block;
+  text-decoration: none;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+  color: #1b7ccd;
+  transition: 0.233s;
+}
+
+.header-right li {
+  line-height: 77px;
+  padding: 0 18px;
+  float: left;
+  color: white;
+  font-size: 24px;
+}
+
+.fb { 
+  line-height: 50px;
+}
+/* メインコンテンツ（動画投稿index） ==================== */
+.contents {
+	width: 104%;
+	min-height: 100%;
+	margin: 16px 0 -32px 0;
+	overflow: hidden;
+}
+
+ul.main-contents {
+	width: 100%;
+	min-height: 100%;
+	float: left;
+	margin-bottom: 80px;
+}
+
+.main-contents li {
+  background-color: #fff;
+  border-radius: 2px;
+	width: 46%;
+	float: left;
+	margin-top: 1.333%;
+	margin-right: 24px;
+  border: 1px solid #FFD464;
+  // max-height: 400px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.thumbnail2 img {
+	width: 100%;
+}
+
+.videoBox .play {
+  position: relative;
+    top: -120px;
+    left: 138px;
+    opacity: 0.8;
+    width: 64px;
+    height: 64px;
+}
+// <!-- hover時処理(おまけ) -->
+.video {
+  -webkit-transition: 0.5s ease-in-out;
+}
+.video:hover {
+  opacity: 0.7;
+}
+
+.main-contents li > p {
+	font-weight: bold;
+	padding: 8px 16px;
+	font-size: 18px;
+  color: #222;
+  margin-top: -60px;
+}
+
+.main-contents li > p:hover {
+  text-decoration: underline;
+  color: #1b7ccd;
+  transition: 0.2333s;
+}
+
+/* ページネーション ================================ */
+.pagination .active { background: red }
+
+/* サイドコンテンツ ================================ */
+.side-contents {
+	width: 32%;
+	background-color: #c0c0c0;
+	float: right;
+	margin-top: 2%;
+}
+
+/* コンテンツ詳細ページ ============================= */
+.breadcrumbs {
+  height: 32px;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.show-content h1 {
+  color: #222;
+  font-weight: bold;
+  padding-top: -16px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.youtube {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important; //cssを優先
+  height: 100% !important; //cssを優先
+}
+
+/* フォーム ================================ */
+input, textarea {
+  border: 1px solid #FFD464;
+  margin-bottom: 15px;
+  border-radius: 3px;
+}
+
+.form-control {
+  display: block;
+  padding: 6px 0;
+  font-size: 18px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-image: none;
+}
+
+.content-field input {
+	height: 200px;
+}
+
+.field input{
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.field textarea {
+	width: 100%;
+	min-height: 200px;
+	font-size: 16px;
+  padding: 10px;
+}
+
+.newh1 {
+	margin-top: 16px;
+}
+/* ボタン================================ */
+.btn2 {
+  // padding: 8px 24px;
+  color: #222;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 「投稿する」「保存」ボタン */
+.primary-btn input{
+  padding: 0.6em 25px 0.6em 25px;
+  font-size: 1.0em;
+}
+/* フッター ================================ */
+footer {
+	// position: absolute;
+ // bottom: 0;
+ //  left: 0;
+ //  right: 0;
+  clear: both;
+  width: 100%;
+  background-color: #282626;
+  color: white;
+  margin-top: 16px;
+  height: 56px;
+}
+
+footer .corporate_info {
+  clear: both;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.corporate_info li {
+	float: left;
+	padding-right: 16px;
+}
+
+.corporate_info p {
+	float: right;
+}
+/* PCメディアクエリ================================ */
+
+@media screen and (min-width:992px) {
+  .videoBox .play {
+  position: relative;
+    top: -128px;
+    left: 42%;
+    opacity: 0.8;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .videoBox .play {
+  position: relative;
+    top: -150px;
+    left: 42%;
+    opacity: 0.8;
+    width: 72px;
+  }
+}
+

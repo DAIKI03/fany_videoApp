@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+    attributes:
+      video:
+        url: URL
+        description: 動画についてひとこと

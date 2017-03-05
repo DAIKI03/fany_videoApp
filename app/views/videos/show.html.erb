@@ -1,0 +1,16 @@
+
+<div class="container">
+	<% breadcrumb :video, @video %>
+	<div class="youtube">
+		<iframe src="<%= @video.iframe_url %>" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div class="show-content">
+		<h1><%= @video.description %></h1>
+	</div>
+	 
+	<p id="notice"><%= notice %></p>
+
+	<%= link_to '編集する', edit_video_path(@video) %> |
+	<%= link_to '削除する', @video, method: :delete, data: { confirm: '本当に削除しますか？' } %> |
+	<%= link_to '戻る', videos_path %>
+</div>

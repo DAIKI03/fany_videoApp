@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  	<meta charset="UTF-8">
+    <title>TestVideoApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  <%= breadcrumbs separator: "　>　" %>
+  	<header class="navbar">
+		  <div class="container">
+		    <div id="logo"><%= link_to "Fany", videos_path %>
+		    	<div class="logo_under">笑う動画SNS</div>
+		    </div>
+		    <ul class="header-right">
+		      <li><%= link_to "動画一覧", videos_path %></li>
+		      <li><%= link_to "投稿する", new_video_path %></li>
+		      <li><a href="#">About</a></li>
+		      <div class="fb-like fb" data-href="<%= "http://#{request.host+request.fullpath}" %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+		    </ul>
+		    
+		  </div>
+		</header>
+		<div class="container">
+   		<%= yield %>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="corporate_info">
+		    	<ul>
+			      <li><a href="#">運営会社</a></li>
+			      <li><a href="#">利用規約</a></li>
+			      <li><a href="#">プライバシーポリシー</a></li>
+			      <li><a href="#">お問合せ</a></li>
+		    	</ul>
+	    		<p>©Fany ALL RIGHTS RESERVED.</p>
+	  		</div>
+  		</div>
+		</footer>
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  </body>
+</html>
